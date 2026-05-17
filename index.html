@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años - Valeria</title>
+<meta name="description" content="Invitación digital para los XV años de Valeria. Sábado 14 de septiembre de 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Cormorant Garamond',serif;color:#3d2b4a;background:#faf7fc;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ========== PALETA ========== */
+:root{
+  --morado:#7b5ea7;--lila:#b497d6;--lavanda:#ddd0ee;--rosa:#f2d4e0;
+  --blanco:#fdf9ff;--dorado:#c9a84c;--dorado-claro:#e8d7a3;
+  --texto:#3d2b4a;--texto-claro:#6b5a7a;
+}
+
+/* ========== PARTÍCULAS / BRILLOS ========== */
+.sparkle-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.sparkle{position:absolute;width:4px;height:4px;background:var(--dorado-claro);border-radius:50%;opacity:0;animation:sparkleAnim 4s infinite}
+@keyframes sparkleAnim{0%{opacity:0;transform:translateY(0) scale(0)}50%{opacity:.8;transform:translateY(-40px) scale(1)}100%{opacity:0;transform:translateY(-80px) scale(0)}}
+
+/* ========== SECCIONES GENERAL ========== */
+section{position:relative;z-index:1;padding:80px 20px;text-align:center}
+.section-inner{max-width:680px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--morado);margin-bottom:8px;letter-spacing:1px}
+.section-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--texto-claro);margin-bottom:30px;font-style:italic}
+.gold-line{width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--dorado),transparent);margin:16px auto 24px}
+
+/* ========== ANIMACIONES SCROLL ========== */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ========== NAV ========== */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:12px 20px;display:flex;justify-content:center;gap:20px;background:rgba(250,247,252,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(123,94,167,.1);transition:transform .3s}
+nav.hidden{transform:translateY(-100%)}
+nav a{font-family:'Montserrat',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--morado);padding:4px 8px;transition:color .3s}
+nav a:hover{color:var(--dorado)}
+
+/* ========== HERO ========== */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(170deg,#f5eef9 0%,#e8daf2 30%,#f2d4e0 70%,#fdf9ff 100%);padding:120px 20px 80px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(180,151,214,.2) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(242,212,224,.3) 0%,transparent 50%);animation:heroShift 12s ease-in-out infinite alternate}
+@keyframes heroShift{0%{transform:translate(0,0)}100%{transform:translate(-3%,2%)}}
+.hero-content{position:relative;z-index:2}
+.hero-pre{font-family:'Montserrat',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:5px;color:var(--dorado);margin-bottom:10px}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,10vw,5.5rem);color:var(--morado);line-height:1.1;margin-bottom:10px;text-shadow:0 2px 20px rgba(123,94,167,.15)}
+.hero-phrase{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,3vw,1.3rem);font-style:italic;color:var(--texto-claro);max-width:500px;margin:0 auto 20px;line-height:1.6}
+.hero-date{font-family:'Montserrat',sans-serif;font-size:.9rem;letter-spacing:3px;color:var(--morado);margin-bottom:30px}
+.hero-ornament{font-size:2rem;color:var(--dorado-claro);margin-bottom:16px}
+.btn-primary{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:3px;padding:14px 36px;border:2px solid var(--dorado);color:var(--dorado);border-radius:50px;transition:all .4s;cursor:pointer;background:transparent}
+.btn-primary:hover{background:var(--dorado);color:#fff;box-shadow:0 4px 20px rgba(201,168,76,.3)}
+
+/* ========== CUENTA REGRESIVA ========== */
+#countdown{background:linear-gradient(180deg,var(--blanco),#f5eef9);padding:60px 20px}
+.countdown-boxes{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px}
+.countdown-box{background:rgba(255,255,255,.7);border:1px solid var(--lavanda);border-radius:16px;padding:18px 14px;min-width:72px;backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(123,94,167,.08)}
+.countdown-box span{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.4rem);color:var(--morado)}
+.countdown-box small{font-family:'Montserrat',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--texto-claro)}
+#countdown-msg{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--dorado);display:none;margin-top:20px}
+
+/* ========== DETALLES ========== */
+#detalles{background:var(--blanco)}
+.detail-cards{display:grid;grid-template-columns:1fr;gap:20px;margin-top:10px}
+.detail-card{background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(221,208,238,.2));border:1px solid var(--lavanda);border-radius:20px;padding:30px 20px;box-shadow:0 4px 20px rgba(123,94,167,.06)}
+.detail-card .icon{font-size:2rem;margin-bottom:10px}
+.detail-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--morado);margin-bottom:6px}
+.detail-card p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--texto-claro);line-height:1.5}
+@media(min-width:500px){.detail-cards{grid-template-columns:1fr 1fr}}
+
+/* ========== UBICACIÓN ========== */
+#ubicacion{background:linear-gradient(180deg,#f5eef9,var(--blanco))}
+.btn-maps{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:2px;padding:14px 32px;background:linear-gradient(135deg,var(--morado),#9b7bc4);color:#fff;border-radius:50px;transition:all .4s;box-shadow:0 4px 16px rgba(123,94,167,.25)}
+.btn-maps:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(123,94,167,.35)}
+
+/* ========== MENSAJE ========== */
+#mensaje{background:linear-gradient(135deg,#f5eef9 0%,#f2d4e0 100%);padding:80px 20px}
+.mensaje-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,3vw,1.35rem);font-style:italic;color:var(--texto);line-height:1.8;max-width:580px;margin:0 auto;position:relative;padding:30px 0}
+.mensaje-text::before,.mensaje-text::after{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--dorado-claro);position:absolute;line-height:1}
+.mensaje-text::before{top:-10px;left:-10px}
+.mensaje-text::after{bottom:-30px;right:-10px}
+
+/* ========== VESTIMENTA ========== */
+#vestimenta{background:var(--blanco)}
+.dress-code-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:4px;padding:16px 40px;border:2px solid var(--dorado);color:var(--dorado);border-radius:50px;margin-top:10px}
+
+/* ========== GALERÍA ========== */
+#galeria{background:linear-gradient(180deg,#f5eef9,var(--blanco));padding:80px 20px}
+.gallery-frame{max-width:400px;margin:0 auto;border-radius:24px;overflow:hidden;border:3px solid var(--dorado-claro);box-shadow:0 8px 40px rgba(123,94,167,.12);position:relative}
+/* <!-- EDITAR AQUÍ: Reemplaza la URL de la imagen por la foto de la quinceañera --> */
+.gallery-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,var(--lavanda),var(--rosa));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--morado);flex-direction:column;gap:8px}
+.gallery-placeholder span{font-size:3rem}
+
+/* ========== RSVP ========== */
+#rsvp{background:linear-gradient(170deg,#f5eef9 0%,#e8daf2 40%,#f2d4e0 100%);padding:80px 20px 100px}
+.rsvp-box{background:rgba(255,255,255,.8);border:1px solid var(--lavanda);border-radius:28px;padding:40px 24px;max-width:500px;margin:0 auto;backdrop-filter:blur(10px);box-shadow:0 8px 40px rgba(123,94,167,.1)}
+.btn-rsvp{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:3px;padding:16px 44px;background:linear-gradient(135deg,var(--dorado),#d4af5a);color:#fff;border-radius:50px;transition:all .4s;box-shadow:0 4px 20px rgba(201,168,76,.3);margin-top:20px}
+.btn-rsvp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.4)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:1px;color:var(--morado);margin-top:16px;padding:10px 20px;border:1px solid var(--lavanda);border-radius:50px;transition:all .3s}
+.btn-whatsapp:hover{background:var(--lavanda);color:var(--morado)}
+
+/* ========== FOOTER ========== */
+footer{background:#3d2b4a;color:rgba(255,255,255,.5);text-align:center;padding:30px 20px;font-family:'Montserrat',sans-serif;font-size:.7rem;letter-spacing:2px}
+
+/* ========== FLORAL SVG DECORATIONS ========== */
+.floral-top,.floral-bottom{position:absolute;left:50%;transform:translateX(-50%);width:200px;opacity:.15;pointer-events:none}
+.floral-top{top:10px}.floral-bottom{bottom:10px}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:480px){
+  nav{gap:10px;padding:10px 12px}
+  nav a{font-size:.65rem;letter-spacing:1px}
+  section{padding:60px 16px}
+  .countdown-boxes{gap:10px}
+  .countdown-box{min-width:64px;padding:14px 10px}
+  .btn-primary,.btn-rsvp{padding:12px 28px;font-size:.75rem}
+  .mensaje-text::before,.mensaje-text::after{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav id="mainNav">
+  <a href="#hero">Inicio</a>
+  <a href="#detalles">Detalles</a>
+  <a href="#ubicacion">Ubicación</a>
+  <a href="#galeria">Galería</a>
+  <a href="#rsvp">Confirmar</a>
+</nav>
+
+<!-- ========== SPARKLES ========== -->
+<div class="sparkle-container" id="sparkles"></div>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div class="hero-content fade-in">
+    <p class="hero-pre">Mis XV Años</p>
+    <div class="hero-ornament">✦</div>
+    <!-- EDITAR AQUÍ: Nombre de la quinceañera -->
+    <h1 class="hero-name">Valeria</h1>
+    <!-- EDITAR AQUÍ: Frase de bienvenida -->
+    <p class="hero-phrase">Te invito a celebrar conmigo este día tan especial que he esperado con todo mi corazón.</p>
+    <div class="gold-line"></div>
+    <!-- EDITAR AQUÍ: Fecha del evento -->
+    <p class="hero-date">Sábado 14 de septiembre de 2026</p>
+    <a href="#rsvp" class="btn-primary">Confirmar asistencia</a>
+  </div>
+</section>
+
+<!-- ========== CUENTA REGRESIVA ========== -->
+<section id="countdown">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Faltan</h2>
+    <div class="gold-line"></div>
+    <div class="countdown-boxes" id="countdownBoxes">
+      <div class="countdown-box"><span id="cdDays">0</span><small>Días</small></div>
+      <div class="countdown-box"><span id="cdHours">0</span><small>Horas</small></div>
+      <div class="countdown-box"><span id="cdMins">0</span><small>Minutos</small></div>
+      <div class="countdown-box"><span id="cdSecs">0</span><small>Segundos</small></div>
+    </div>
+    <p id="countdown-msg">✨ ¡Hoy es el gran día! ✨</p>
+  </div>
+</section>
+
+<!-- ========== DETALLES ========== -->
+<section id="detalles">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Detalles del Evento</h2>
+    <p class="section-subtitle">Todo lo que necesitas saber</p>
+    <div class="gold-line"></div>
+    <div class="detail-cards">
+      <div class="detail-card">
+        <div class="icon">📅</div>
+        <h3>Fecha</h3>
+        <!-- EDITAR AQUÍ: Fecha -->
+        <p>Sábado 14 de septiembre de 2026</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">🕖</div>
+        <h3>Hora</h3>
+        <!-- EDITAR AQUÍ: Hora -->
+        <p>7:00 PM</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">🏛️</div>
+        <h3>Lugar</h3>
+        <!-- EDITAR AQUÍ: Nombre del lugar -->
+        <p>Salón Jardín Real</p>
+      </div>
+      <div class="detail-card">
+        <div class="icon">📍</div>
+        <h3>Dirección</h3>
+        <!-- EDITAR AQUÍ: Dirección del lugar -->
+        <p>Av. de las Flores #123, Guadalajara, Jalisco</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== UBICACIÓN ========== -->
+<section id="ubicacion">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Ubicación</h2>
+    <p class="section-subtitle">Te esperamos en</p>
+    <div class="gold-line"></div>
+    <!-- EDITAR AQUÍ: Nombre del lugar -->
+    <p style="font-size:1.2rem;color:var(--morado);margin-bottom:6px;font-weight:600;">Salón Jardín Real</p>
+    <!-- EDITAR AQUÍ: Dirección -->
+    <p style="color:var(--texto-claro);margin-bottom:24px;">Av. de las Flores #123, Guadalajara, Jalisco</p>
+    <!-- EDITAR AQUÍ: Reemplaza el enlace href con tu link real de Google Maps -->
+    <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-maps">📍 Ver ubicación en Google Maps</a>
+  </div>
+</section>
+
+<!-- ========== MENSAJE ESPECIAL ========== -->
+<section id="mensaje">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Un mensaje especial</h2>
+    <div class="gold-line"></div>
+    <!-- EDITAR AQUÍ: Mensaje especial -->
+    <p class="mensaje-text">
+      Hay momentos que se sueñan toda la vida, y compartirlos con las personas que más queremos los hace aún más especiales. Me encantaría contar con tu presencia en esta noche tan importante.
+    </p>
+  </div>
+</section>
+
+<!-- ========== VESTIMENTA ========== -->
+<section id="vestimenta">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Código de Vestimenta</h2>
+    <div class="gold-line"></div>
+    <p style="color:var(--texto-claro);margin-bottom:16px;font-size:1.05rem;">Te pedimos asistir con vestimenta</p>
+    <!-- EDITAR AQUÍ: Código de vestimenta -->
+    <div class="dress-code-badge">Formal / Elegante</div>
+  </div>
+</section>
+
+<!-- ========== GALERÍA ========== -->
+<section id="galeria">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">La Quinceañera</h2>
+    <div class="gold-line"></div>
+    <div class="gallery-frame">
+      <!-- EDITAR AQUÍ: Reemplaza este div por una etiqueta <img src="tu-foto.jpg" alt="Valeria"> -->
+      <div class="gallery-placeholder">
+        <span>📸</span>
+        Foto de Valeria
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RSVP ========== -->
+<section id="rsvp">
+  <div class="section-inner fade-in">
+    <h2 class="section-title">Confirma tu Asistencia</h2>
+    <div class="gold-line"></div>
+    <div class="rsvp-box">
+      <p style="font-size:1.1rem;color:var(--texto-claro);line-height:1.7;margin-bottom:8px;">
+        Tu presencia es el mejor regalo. Por favor confirma tu asistencia para poder preparar todo con mucho cariño.
+      </p>
+      <!-- EDITAR AQUÍ: Reemplaza el enlace href con tu link de Google Forms -->
+      <a href="https://forms.gle/ejemplo" target="_blank" rel="noopener" class="btn-rsvp">Confirmar asistencia</a>
+      <br>
+      <!-- EDITAR AQUÍ: Reemplaza el número de WhatsApp (formato: código de país + número, sin espacios ni signos) -->
+      <a href="https://wa.me/5213312345678?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Valeria" target="_blank" rel="noopener" class="btn-whatsapp">💬 Confirmar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <!-- EDITAR AQUÍ: Nombre de la quinceañera -->
+  <p>Con amor, Valeria ✦ 2026</p>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+/* --- CUENTA REGRESIVA --- */
+// EDITAR AQUÍ: Cambia la fecha del evento (formato: "Mes Día, Año Hora:Minutos:Segundos")
+const eventDate = new Date("September 14, 2026 19:00:00").getTime();
+
+function updateCountdown() {
+  const now = Date.now();
+  const diff = eventDate - now;
+  if (diff <= 0) {
+    document.getElementById("countdownBoxes").style.display = "none";
+    document.getElementById("countdown-msg").style.display = "block";
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById("cdDays").textContent = d;
+  document.getElementById("cdHours").textContent = h;
+  document.getElementById("cdMins").textContent = m;
+  document.getElementById("cdSecs").textContent = s;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* --- ANIMACIONES AL SCROLL (Intersection Observer) --- */
+const faders = document.querySelectorAll(".fade-in");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+faders.forEach(f => observer.observe(f));
+
+/* --- NAV OCULTAR AL BAJAR --- */
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+  const curr = window.scrollY;
+  document.getElementById("mainNav").classList.toggle("hidden", curr > lastScroll && curr > 100);
+  lastScroll = curr;
+}, { passive: true });
+
+/* --- PARTÍCULAS / BRILLOS --- */
+(function createSparkles() {
+  const container = document.getElementById("sparkles");
+  for (let i = 0; i < 30; i++) {
+    const s = document.createElement("div");
+    s.classList.add("sparkle");
+    s.style.left = Math.random() * 100 + "%";
+    s.style.top = Math.random() * 100 + "%";
+    s.style.animationDelay = Math.random() * 5 + "s";
+    s.style.animationDuration = 3 + Math.random() * 3 + "s";
+    container.appendChild(s);
+  }
+})();
+</script>
+</body>
+</html>
